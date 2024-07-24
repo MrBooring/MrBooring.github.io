@@ -41,7 +41,7 @@ class SideMenu extends StatelessWidget {
                     ),
                     AreaInfoText(
                       title: "Age",
-                      text: "20",
+                      text: "21",
                     ),
                     Skills(),
                     SizedBox(height: defaultPadding),
@@ -49,25 +49,25 @@ class SideMenu extends StatelessWidget {
                     Knowledges(),
                     Divider(),
                     SizedBox(height: defaultPadding / 2),
-                    TextButton(
-                      onPressed: () async {
-                        downloadResume();
-                      },
-                      child: FittedBox(
-                        child: Row(
-                          children: [
-                            Text(
-                              "DOWNLOAD CV",
-                              style: TextStyle(
-                                color: Theme.of(context).textTheme.bodyText1!.color,
-                              ),
-                            ),
-                            SizedBox(width: defaultPadding / 2),
-                            SvgPicture.asset("assets/icons/download.svg")
-                          ],
-                        ),
-                      ),
-                    ),
+                    // TextButton(
+                    //   onPressed: () async {
+                    //     downloadResume();
+                    //   },
+                    //   child: FittedBox(
+                    //     child: Row(
+                    //       children: [
+                    //         Text(
+                    //           "DOWNLOAD CV",
+                    //           style: TextStyle(
+                    //             color: Theme.of(context).textTheme.bodyText1!.color,
+                    //           ),
+                    //         ),
+                    //         SizedBox(width: defaultPadding / 2),
+                    //         SvgPicture.asset("assets/icons/download.svg")
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
                     Container(
                       margin: EdgeInsets.only(top: defaultPadding),
                       color: Color(0xFF24242E),

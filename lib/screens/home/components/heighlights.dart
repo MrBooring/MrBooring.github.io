@@ -49,7 +49,7 @@ class HighLightsInfo extends StatelessWidget {
                     // ),
                     HeighLight(
                       counter: AnimatedCounter(
-                        value: 1,
+                        value: 2,
                         text: "+ Years",
                       ),
                       label: "Experience",
