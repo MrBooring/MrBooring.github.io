@@ -45,7 +45,10 @@ class HomeBanner extends StatelessWidget {
                 if (!Responsive.isMobileLarge(context))
                   ElevatedButton(
                     onPressed: () {
-                      html.AnchorElement anchorElement = new html.AnchorElement(href: "lib/assets/Siddhant_2P.pdf");
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: const Text('Downloading Resume!'),
+                      ));
+                      html.AnchorElement anchorElement = new html.AnchorElement(href: "https://drive.google.com/uc?export=download&id=1Ve7ue0cVgyo0K7lHS2A5rpgvV40tImrx");
                       anchorElement.download = "Siddhant_Vedpathak.pdf";
                       anchorElement.click();
                     },
