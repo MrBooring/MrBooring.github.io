@@ -21,7 +21,7 @@ class MyInfo extends StatelessWidget {
             Spacer(),
             Text(
               "Siddhant Vedpathak",
-              style: Theme.of(context).textTheme.subtitle2,
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             Text(
               "Flutter Developer | TY - BCA",

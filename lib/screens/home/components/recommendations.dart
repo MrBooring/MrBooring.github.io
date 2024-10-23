@@ -18,7 +18,7 @@ class Recommendations extends StatelessWidget {
         children: [
           Text(
             "Recommendations",
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(height: defaultPadding),
           SingleChildScrollView(
@@ -40,4 +40,3 @@ class Recommendations extends StatelessWidget {
     );
   }
 }
-

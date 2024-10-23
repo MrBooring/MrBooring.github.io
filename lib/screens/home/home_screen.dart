@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile/screens/home/components/contact.dart';
+import 'package:flutter_profile/screens/home/components/profile.dart';
 import 'package:flutter_profile/screens/main/main_screen.dart';
 
 import 'components/heighlights.dart';
@@ -14,9 +16,10 @@ class HomeScreen extends StatelessWidget {
     return MainScreen(
       children: [
         HomeBanner(),
+        Profile(),
+        // ContactMe(),
         HighLightsInfo(),
         MyProjects(),
-        // Recommendations(),
       ],
     );
   }

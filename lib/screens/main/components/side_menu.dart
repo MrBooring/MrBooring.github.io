@@ -1,12 +1,12 @@
 import 'dart:developer';
 import 'dart:html';
-import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile/constants.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:html' as html;
 
 import 'area_info_text.dart';
 import 'coding.dart';
@@ -49,25 +49,25 @@ class SideMenu extends StatelessWidget {
                     Knowledges(),
                     Divider(),
                     SizedBox(height: defaultPadding / 2),
-                    // TextButton(
-                    //   onPressed: () async {
-                    //     downloadResume();
-                    //   },
-                    //   child: FittedBox(
-                    //     child: Row(
-                    //       children: [
-                    //         Text(
-                    //           "DOWNLOAD CV",
-                    //           style: TextStyle(
-                    //             color: Theme.of(context).textTheme.bodyText1!.color,
-                    //           ),
-                    //         ),
-                    //         SizedBox(width: defaultPadding / 2),
-                    //         SvgPicture.asset("assets/icons/download.svg")
-                    //       ],
-                    //     ),
-                    //   ),
-                    // ),
+                    TextButton(
+                      onPressed: () async {
+                        downloadResume();
+                      },
+                      child: FittedBox(
+                        child: Row(
+                          children: [
+                            Text(
+                              "DOWNLOAD CV",
+                              style: TextStyle(
+                                color: Theme.of(context).textTheme.bodyLarge!.color,
+                              ),
+                            ),
+                            SizedBox(width: defaultPadding / 2),
+                            SvgPicture.asset("assets/icons/download.svg")
+                          ],
+                        ),
+                      ),
+                    ),
                     Container(
                       margin: EdgeInsets.only(top: defaultPadding),
                       color: Color(0xFF24242E),
@@ -120,8 +120,8 @@ class SideMenu extends StatelessWidget {
 
   void downloadResume() {
     if (kIsWeb) {
-      AnchorElement anchorElement = new AnchorElement(href: "assets/resume/sidResume.pdf");
-      anchorElement.download = "sidResume";
+      html.AnchorElement anchorElement = new html.AnchorElement(href: "lib/assets/Siddhant_2P.pdf");
+      anchorElement.download = "Siddhant_Vedpathak.pdf";
       anchorElement.click();
     }
   }

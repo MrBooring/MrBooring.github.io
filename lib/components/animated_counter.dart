@@ -19,10 +19,7 @@ class AnimatedCounter extends StatelessWidget {
       duration: defaultDuration,
       builder: (context, value, child) => Text(
         "$value$text",
-        style: Theme.of(context)
-            .textTheme
-            .headline6!
-            .copyWith(color: primaryColor),
+        style: Theme.of(context).textTheme.titleMedium!.copyWith(color: primaryColor),
       ),
     );
   }

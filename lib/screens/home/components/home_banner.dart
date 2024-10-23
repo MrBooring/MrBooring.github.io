@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile/responsive.dart';
-
+import 'dart:html' as html;
 import '../../../constants.dart';
 
 class HomeBanner extends StatelessWidget {
@@ -30,11 +30,11 @@ class HomeBanner extends StatelessWidget {
                 Text(
                   "Discover my Amazing \nArt Space!",
                   style: Responsive.isDesktop(context)
-                      ? Theme.of(context).textTheme.headline3!.copyWith(
+                      ? Theme.of(context).textTheme.titleLarge!.copyWith(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           )
-                      : Theme.of(context).textTheme.headline5!.copyWith(
+                      : Theme.of(context).textTheme.titleLarge!.copyWith(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
@@ -42,19 +42,34 @@ class HomeBanner extends StatelessWidget {
                 if (Responsive.isMobileLarge(context)) const SizedBox(height: defaultPadding / 2),
                 MyBuildAnimatedText(),
                 SizedBox(height: defaultPadding),
-                // if (!Responsive.isMobileLarge(context))
-                //   ElevatedButton(
-                //     onPressed: () {},
-                //     style: TextButton.styleFrom(
-                //       padding: EdgeInsets.symmetric(horizontal: defaultPadding * 2, vertical: defaultPadding),
-                //       backgroundColor: primaryColor,
-                //     ),
-                //     child: Text(
-                //       "EXPLORE NOW",
-                //       style: TextStyle(color: darkColor),
-                //     ),
-                //   ),
+                if (!Responsive.isMobileLarge(context))
+                  ElevatedButton(
+                    onPressed: () {
+                      html.AnchorElement anchorElement = new html.AnchorElement(href: "lib/assets/Siddhant_2P.pdf");
+                      anchorElement.download = "Siddhant_Vedpathak.pdf";
+                      anchorElement.click();
+                    },
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.symmetric(horizontal: defaultPadding, vertical: defaultPadding),
+                      backgroundColor: primaryColor,
+                    ),
+                    child: Text(
+                      "Download my resume",
+                      style: TextStyle(color: darkColor),
+                    ),
+                  ),
               ],
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(defaultPadding),
+              child: Text(
+                "- Made in Flutter",
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(color: Colors.white38),
+              ),
             ),
           )
         ],
@@ -72,7 +87,7 @@ class MyBuildAnimatedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTextStyle(
       // it applies same style to all the widgets under it
-      style: Theme.of(context).textTheme.subtitle1!,
+      style: Theme.of(context).textTheme.bodyMedium!,
       maxLines: 1,
       child: Row(
         children: [
@@ -130,7 +145,7 @@ class FlutterCodedText extends StatelessWidget {
         text: "<",
         children: [
           TextSpan(
-            text: "flutter",
+            text: "Flutter",
             style: TextStyle(color: primaryColor),
           ),
           TextSpan(text: ">"),
